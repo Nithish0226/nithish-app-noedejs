@@ -20,11 +20,20 @@ fs.appendFile('mynewfile2.txt', b2, function (err) {
   console.log('Saved!');
 });
 
-
   res.send("fine")
 
 });
 
+router.get('/download',(req,res)=>{
+
+console.log(__dirname)  
+console.log(__filename)
+console.log("down port")
+// Url of the image
+const file = 'mynewfile1.txt';
+// Path at which image will get downloaded
+res.send(`${__dirname}`+'\\mynewfile1.txt')
+})
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   var jsonData = '{"persons":[{"name":"John","city":"New York"},{"name":"Phil","city":"Ohio"}]}';
